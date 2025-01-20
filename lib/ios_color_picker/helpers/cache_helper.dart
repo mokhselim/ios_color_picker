@@ -52,7 +52,7 @@ class CacheHelper {
   }
 
   /// Get data
-  dynamic getData({required String key}) async {
+   getData({required String key}) async {
     await _ensureInitialized();
     return _sharedPreferences.get(key);
   }
