@@ -30,7 +30,7 @@ class _HistoryColorsState extends State<HistoryColors> {
     if (savedColors is List && savedColors.isEmpty) {
       historyColors = defaultHistoryColors;
       setHistory();
-    } else {
+    } else if(savedColors is List) {
       for (var value in savedColors) {
         historyColors.add(HexColor.fromHex(value.toString()));
       }
