@@ -25,7 +25,7 @@ class _HistoryColorsState extends State<HistoryColors> {
 
   @override
   void initState() {
-    List<Object?> savedColors =
+    List<dynamic> savedColors =
         CacheHelper().getData(key: "history_colors") ?? [];
     if (savedColors.isEmpty) {
       historyColors = defaultHistoryColors;
