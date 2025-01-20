@@ -26,7 +26,7 @@ class _HistoryColorsState extends State<HistoryColors> {
   @override
   void initState() {
     List<Object?> savedColors =
-        CacheHelper.getData(key: "history_colors") ?? [];
+        CacheHelper().getData(key: "history_colors") ?? [];
     if (savedColors.isEmpty) {
       historyColors = defaultHistoryColors;
       setHistory();
@@ -48,8 +48,8 @@ class _HistoryColorsState extends State<HistoryColors> {
     }
     if (empty) {
       historyColors.toStringList().forEach((v) {});
-      CacheHelper.setData(
-          key: "history_colors", value: historyColors.toStringList());
+      CacheHelper()
+          .setData(key: "history_colors", value: historyColors.toStringList());
       if (page > 1 && colorPage != page && !delete) {
         pageController.jumpToPage(page);
         colorPage = page;

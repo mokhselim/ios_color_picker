@@ -1,18 +1,40 @@
-
 import 'package:shared_preferences/shared_preferences.dart';
 
+///Local Data Helper
 class CacheHelper {
-  static late SharedPreferences _sharedPreferences;
+  /// Singleton instance
+  static final CacheHelper _instance = CacheHelper._internal();
 
-  static Future<SharedPreferences> init() async {
-    return _sharedPreferences = await SharedPreferences.getInstance();
+  /// SharedPreferences instance
+  late SharedPreferences _sharedPreferences;
+
+  static bool _isInitialized = false;
+
+  /// Private constructor
+  CacheHelper._internal();
+
+  /// Factory constructor to return the singleton instance
+  factory CacheHelper() => _instance;
+
+  /// Ensure initialization is done once
+  Future<void> _ensureInitialized() async {
+    if (!_isInitialized) {
+      _sharedPreferences = await SharedPreferences.getInstance();
+      _isInitialized = true;
+    }
   }
 
-  static Future<bool> setData<T>({
+  /// Public initialization method for optional explicit init
+  static Future<void> init() async {
+    await _instance._ensureInitialized();
+  }
+
+  /// Save data
+  Future<bool> setData<T>({
     required String key,
     required T value,
   }) async {
-    _sharedPreferences = await SharedPreferences.getInstance();
+    await _ensureInitialized();
     switch (value) {
       case String _:
         return await _sharedPreferences.setString(key, value);
@@ -22,26 +44,28 @@ class CacheHelper {
         return await _sharedPreferences.setInt(key, value);
       case double _:
         return await _sharedPreferences.setDouble(key, value);
-      case   List<String> _:
-        return await _sharedPreferences.setStringList(
-            key, value );
+      case List<String> _:
+        return await _sharedPreferences.setStringList(key, value);
+      default:
+        throw ArgumentError('Unsupported type');
     }
-    return await _sharedPreferences.setString(key, value as String);
   }
 
-  static getData({
-    required String key,
-  }) {
+  /// Get data
+  dynamic getData({required String key}) async {
+    await _ensureInitialized();
     return _sharedPreferences.get(key);
   }
 
-  static Future<bool> clearData({
-    required String key,
-  }) async {
+  /// Clear specific data
+  Future<bool> clearData({required String key}) async {
+    await _ensureInitialized();
     return await _sharedPreferences.remove(key);
   }
 
-  static Future<bool> clearAllData() async {
+  /// Clear all data
+  Future<bool> clearAllData() async {
+    await _ensureInitialized();
     return await _sharedPreferences.clear();
   }
 }

@@ -19,13 +19,13 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
 
   @override
   void initState() {
-    typeIndex = CacheHelper.getData(key: "selector_index") ?? 0;
+    typeIndex = CacheHelper().getData(key: "selector_index") ?? 0;
     super.initState();
   }
 
   @override
   void dispose() {
-    CacheHelper.setData(value: typeIndex, key: "selector_index");
+    CacheHelper().setData(value: typeIndex, key: "selector_index");
     super.dispose();
   }
 
