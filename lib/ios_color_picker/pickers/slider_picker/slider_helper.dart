@@ -106,16 +106,16 @@ class ColorPickerSlider extends StatelessWidget {
               .toColor();
           break;
         case TrackType.red:
-          thumbOffset += (box.maxWidth - 30.0) * hsvColor.toColor().r / 0xff;
+          thumbOffset += (box.maxWidth - 30.0) * hsvColor.toColor().red / 0xff;
           thumbColor = hsvColor.toColor().withValues(alpha: 1.0);
           break;
         case TrackType.green:
           thumbOffset +=
-              (box.maxWidth - 30.0) * hsvColor.toColor().g / 0xff;
+              (box.maxWidth - 30.0) * hsvColor.toColor().green / 0xff;
           thumbColor = hsvColor.toColor().withValues(alpha: 1.0);
           break;
         case TrackType.blue:
-          thumbOffset += (box.maxWidth - 30.0) * hsvColor.toColor().b / 0xff;
+          thumbOffset += (box.maxWidth - 30.0) * hsvColor.toColor().blue / 0xff;
           thumbColor = hsvColor.toColor().withValues(alpha: 1.0);
           break;
       }

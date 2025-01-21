@@ -46,6 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: ElevatedButton(
                 onPressed: () {
                   showModalBottomSheet(
+                    backgroundColor: Colors.transparent,
+                    barrierColor: Colors.transparent,
                     isScrollControlled: true,
                       context: context,
                       builder: (context) {

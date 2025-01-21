@@ -85,9 +85,9 @@ class _SlidePickerState extends State<SlidePicker> {
     if (widget.colorModel == ColorModel.rgb) {
       final Color color = currentHsvColor.toColor();
       return [
-        color.r.toInt().toString(),
-        color.g.toInt().toString(),
-        color.b.toInt().toString(),
+        color.red.toString(),
+        color.green.toString(),
+        color.blue.toString(),
         '${(color.a * 100).round()}',
       ][pos];
     } else if (widget.colorModel == ColorModel.hsv) {
