@@ -24,10 +24,14 @@ class _HistoryColorsState extends State<HistoryColors> {
   List<Color> historyColors = [];
 
   @override
-  void initState()  {
-    var savedColors =
-        (CacheHelper().getData(key: "history_colors")) as List<Object?>;
-    if (savedColors.isEmpty) {
+  void initState() {
+    initializeData();
+    super.initState();
+  }
+
+  Future<void> initializeData() async {
+    var savedColors = await CacheHelper().getData(key: "history_colors");
+    if (savedColors == null || (savedColors as List).isEmpty) {
       historyColors = defaultHistoryColors;
       setHistory();
     } else {
@@ -36,7 +40,6 @@ class _HistoryColorsState extends State<HistoryColors> {
       }
       setHistory(empty: false);
     }
-    super.initState();
   }
 
   void setHistory({bool empty = true, bool delete = false}) {
