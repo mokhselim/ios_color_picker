@@ -1,7 +1,7 @@
 name: ios_color_picker
 description: "A new Flutter package."
 version: 0.0.1+4
-homepage:
+homepage: https://github.com/mokhselim/ios_color_picker
 
 environment:
   sdk: ^3.6.0
