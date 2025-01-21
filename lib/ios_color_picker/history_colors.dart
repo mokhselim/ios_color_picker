@@ -30,22 +30,16 @@ class _HistoryColorsState extends State<HistoryColors> {
   }
 
   Future<void> initializeData() async {
-    print("MOOOOO1");
     var savedColors = await CacheHelper().getData(key: "history_colors");
     if (savedColors == null || (savedColors as List).isEmpty) {
-      print("MOOOOO2");
       historyColors = defaultHistoryColors;
       setHistory();
     } else {
-      print("MOOOOO3");
       for (var value in savedColors) {
-        print("MOOOOO4");
-        print(value);
         historyColors.add(HexColor.fromHex(value.toString()));
       }
       setHistory(empty: false);
     }
-    setState(() {});
   }
 
   void setHistory({bool empty = true, bool delete = false}) {
@@ -73,6 +67,7 @@ class _HistoryColorsState extends State<HistoryColors> {
     if (delete) {
       _tipController.hideTooltip();
     }
+    setState(() {});
   }
 
   Future<void> showTooltip() async {
@@ -170,7 +165,6 @@ class _HistoryColorsState extends State<HistoryColors> {
                         onTap: () {
                           historyColors.removeAt((index + (pageIndex * 10)));
                           setHistory(delete: true);
-                          setState(() {});
                         },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
