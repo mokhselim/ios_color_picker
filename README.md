@@ -77,7 +77,6 @@ context: context,
 Please run the app in the [`example/`](https://github.com/mokhselim/ios_color_picker/tree/main/example) folder to start playing!
 
 ## Additional information
-My LinkedIn
 <a href="https://www.linkedin.com/in/mo-kh-selim/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/144px-LinkedIn_icon.svg.png" /></a>
 
 

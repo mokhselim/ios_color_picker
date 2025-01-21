@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 
 ///Pickers Components height
 double componentsHeight(BuildContext context) {
-  return (MediaQuery.sizeOf(context).width - 32) -
-      (((MediaQuery.sizeOf(context).width - 32) / 12) * 2);
+  double width = MediaQuery.sizeOf(context).width;
+  if (width > 400) {
+    width = 400;
+  }
+  return (width - 32) - (((width - 32) / 12) * 2);
 }
 
 enum ColorsType {
