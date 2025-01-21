@@ -101,7 +101,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: b00ab919576f50f41e76c231b31a0786e10b10d1
+      resolved-ref: "2a463ad2293a4a0a481264fa2f03486c569dd2c2"
       url: "git@github.com:mokhselim/ios_color_picker.git"
     source: git
     version: "0.0.1+5"
