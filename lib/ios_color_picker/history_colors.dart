@@ -21,7 +21,7 @@ class _HistoryColorsState extends State<HistoryColors> {
   PageController pageController = PageController();
   final _tipController = SuperTooltipController();
 
-  List<Color> historyColors = [];
+  List<Color> historyColors = defaultHistoryColors;
 
   @override
   void initState() {
