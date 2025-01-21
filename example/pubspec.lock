@@ -99,11 +99,10 @@ packages:
   ios_color_picker:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: "2a463ad2293a4a0a481264fa2f03486c569dd2c2"
-      url: "git@github.com:mokhselim/ios_color_picker.git"
-    source: git
+      name: ios_color_picker
+      sha256: cd096b5e047f0fb781cd336c911d1b73be18749a86fb1e16bf9b20cb244dd2c7
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1+5"
   leak_tracker:
     dependency: transitive

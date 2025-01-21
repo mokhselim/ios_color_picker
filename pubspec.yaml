@@ -1,6 +1,6 @@
 name: ios_color_picker
 description: "A new Flutter package that provides native iOS Color Picker cloned UI for all platforms Web, Android, iOS, also provides native iOS picker for iOS Only"
-version: 0.0.1+5
+version: 0.0.1+6
 homepage: https://github.com/mokhselim/ios_color_picker
 
 environment:

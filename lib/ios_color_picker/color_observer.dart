@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
-ColorController colorController = ColorController(Colors.white);
+ColorController colorController = ColorController(Colors.red);
 
 ///Observer Class
 class ColorController extends ValueNotifier<Color> {
