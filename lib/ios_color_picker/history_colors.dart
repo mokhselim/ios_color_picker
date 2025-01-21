@@ -24,9 +24,9 @@ class _HistoryColorsState extends State<HistoryColors> {
   List<Color> historyColors = [];
 
   @override
-  void initState() async {
+  void initState()  {
     var savedColors =
-        (await CacheHelper().getData(key: "history_colors")) as List<String>;
+        (CacheHelper().getData(key: "history_colors")) as List<Object?>;
     if (savedColors.isEmpty) {
       historyColors = defaultHistoryColors;
       setHistory();
