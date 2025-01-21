@@ -47,9 +47,9 @@ Animated collapsible sidebar for Flutter apps " macOS & Web & Windows & Linux " 
 ## Usage
 
 
-[//]: (to `/example` folder.)
+[//]: # (to `/example` folder.)
 
-~~~~dart
+```dart
 
 ElevatedButton(
 onPressed: () {
@@ -58,24 +58,27 @@ backgroundColor: Colors.transparent,
 barrierColor: Colors.transparent,
 isScrollControlled: true,
 context: context,
-builder: (context) {
-return IosColorPicker(
-onColorSelected: (Color value) {
-setState(() {
-backgroundColor = value;
-});
-},
-);
-});
-},
-child: Text("SelectColor"),
+  builder: (context) {
+        return IosColorPicker(
+        onColorSelected: (Color value) {
+          setState(() {
+            backgroundColor = value;
+          });
+          },);
+          });
+            },
+    child: Text("SelectColor"),
 ),
-~~~~
+
+```
+
+## 🧪 Example
+
+Please run the app in the [`example/`](https://github.com/mokhselim/ios_color_picker/tree/main/example) folder to start playing!
 
 ## Additional information
-LinkedIn
-<link as="https://www.linkedin.com/in/mo-kh-selim/">
-
+My LinkedIn
+<a href="https://www.linkedin.com/in/mo-kh-selim/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/144px-LinkedIn_icon.svg.png" /></a>
 
 
 # ios_color_picker
