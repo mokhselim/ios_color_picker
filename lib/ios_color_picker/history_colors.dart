@@ -26,11 +26,11 @@ class _HistoryColorsState extends State<HistoryColors> {
   @override
   void initState() {
     var savedColors =
-        CacheHelper().getData(key: "history_colors") ?? [];
-    if (savedColors is List && savedColors.isEmpty) {
+        CacheHelper().getData(key: "history_colors") as List<String>;
+    if (savedColors.isEmpty) {
       historyColors = defaultHistoryColors;
       setHistory();
-    } else if(savedColors is List) {
+    } else {
       for (var value in savedColors) {
         historyColors.add(HexColor.fromHex(value.toString()));
       }
