@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ios_color_picker/ios_color_picker/extensions.dart';
-import '../ios_color_picker.dart';
+import '../color_observer.dart';
 import '../shared.dart';
 
 class GridPicker extends StatelessWidget {

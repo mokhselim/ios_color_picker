@@ -3,8 +3,8 @@ import 'package:ios_color_picker/ios_color_picker/pickers/area_picker.dart';
 import 'package:ios_color_picker/ios_color_picker/pickers/grid_picker.dart';
 import 'package:ios_color_picker/ios_color_picker/pickers/slider_picker/slider_picker.dart';
 import 'package:ios_color_picker/ios_color_picker/shared.dart';
+import 'color_observer.dart';
 import 'helpers/cache_helper.dart';
-import 'ios_color_picker.dart';
 
 class PickersSelectorRow extends StatefulWidget {
   final ValueChanged<Color> onColorChanged;

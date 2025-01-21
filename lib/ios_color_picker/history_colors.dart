@@ -4,8 +4,8 @@ import 'package:ios_color_picker/ios_color_picker/extensions.dart';
 import 'package:ios_color_picker/ios_color_picker/shared.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:super_tooltip/super_tooltip.dart';
+import 'color_observer.dart';
 import 'helpers/cache_helper.dart';
-import 'ios_color_picker.dart';
 
 class HistoryColors extends StatefulWidget {
   final ValueChanged<Color> onColorChanged;

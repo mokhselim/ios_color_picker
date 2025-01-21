@@ -25,9 +25,9 @@ class _IosColorPickerState extends State<IosColorPicker> {
   }
 
   @override
-  void dispose() {
+  void deactivate() {
     widget.onColorSelected(colorController.value);
-    super.dispose();
+    super.deactivate();
   }
 
   @override
@@ -230,5 +230,3 @@ class _IosColorPickerState extends State<IosColorPicker> {
     );
   }
 }
-
-ColorController colorController = ColorController(Color(0xff881AF6));
