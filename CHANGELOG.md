@@ -1,3 +1,3 @@
-## 0.0.1+6
+## 1.0.0
 
-* PREPARE FOR RELEASE
+* First Build, iOS Color Picker cloned UI for all platforms
