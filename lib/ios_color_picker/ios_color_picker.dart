@@ -6,11 +6,14 @@ import 'package:ios_color_picker/ios_color_picker/pickers/slider_picker/slider_h
 import 'package:ios_color_picker/ios_color_picker/pickers_selector_row.dart';
 import 'package:ios_color_picker/ios_color_picker/shared.dart';
 
+///Returns iOS Style color Picker
 class IosColorPicker extends StatefulWidget {
   const IosColorPicker({
     super.key,
     required this.onColorSelected,
   });
+
+  ///returns the selected color
   final ValueChanged<Color> onColorSelected;
 
   @override
@@ -39,8 +42,10 @@ class _IosColorPickerState extends State<IosColorPicker> {
             splashColor: Colors.transparent,
             focusColor: Colors.transparent,
             onTap: () => Navigator.pop(context),
-            child:  SizedBox(
-              width: MediaQuery.sizeOf(context).width > 500 ? 500 :  MediaQuery.sizeOf(context).width,
+            child: SizedBox(
+              width: MediaQuery.sizeOf(context).width > 500
+                  ? 500
+                  : MediaQuery.sizeOf(context).width,
             ),
           ),
         ),
