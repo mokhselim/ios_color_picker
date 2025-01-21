@@ -45,6 +45,7 @@ class _HistoryColorsState extends State<HistoryColors> {
       }
       setHistory(empty: false);
     }
+    setState(() {});
   }
 
   void setHistory({bool empty = true, bool delete = false}) {
