@@ -7,7 +7,8 @@ import 'helpers/cache_helper.dart';
 import 'ios_color_picker.dart';
 
 class PickersSelectorRow extends StatefulWidget {
-  const PickersSelectorRow({super.key});
+  final ValueChanged<Color> onColorChanged;
+  const PickersSelectorRow({super.key, required this.onColorChanged});
 
   @override
   State<PickersSelectorRow> createState() => _PickersSelectorRowState();
@@ -137,7 +138,10 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
           ValueListenableBuilder<Color>(
             valueListenable: colorController,
             builder: (context, color, child) {
-              return GridPicker();
+              return GridPicker(onColorChanged: (v) {
+                colorController.updateColor(v);
+                widget.onColorChanged(colorController.value);
+              });
             },
           ),
         if (typeIndex == 1)
@@ -148,6 +152,7 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
                 pickerColor: colorController.value,
                 onColorChanged: (v) {
                   colorController.updateColor(v);
+                  widget.onColorChanged(colorController.value);
                 },
                 paletteType: ColorsType.hslWithSaturation,
               );
@@ -171,6 +176,7 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
                   pickerColor: color,
                   onColorChanged: (Color value) {
                     colorController.updateColor(value);
+                    widget.onColorChanged(colorController.value);
                   },
                 );
               },

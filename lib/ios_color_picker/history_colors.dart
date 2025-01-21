@@ -8,7 +8,8 @@ import 'helpers/cache_helper.dart';
 import 'ios_color_picker.dart';
 
 class HistoryColors extends StatefulWidget {
-  const HistoryColors({super.key});
+  final ValueChanged<Color> onColorChanged;
+  const HistoryColors({super.key, required this.onColorChanged});
 
   @override
   State<HistoryColors> createState() => _HistoryColorsState();
@@ -182,6 +183,7 @@ class _HistoryColorsState extends State<HistoryColors> {
                         onTap: () {
                           colorController.updateColor(
                               historyColors[(index + (pageIndex * 10))]);
+                          widget.onColorChanged(colorController.value);
                           _tipController.hideTooltip();
                           toolTip = -1;
                           setState(() {});

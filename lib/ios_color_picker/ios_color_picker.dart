@@ -9,7 +9,9 @@ import 'package:ios_color_picker/ios_color_picker/shared.dart';
 class IosColorPicker extends StatefulWidget {
   const IosColorPicker({
     super.key,
+    required this.onColorSelected,
   });
+  final ValueChanged<Color> onColorSelected;
 
   @override
   State<IosColorPicker> createState() => _IosColorPickerState();
@@ -20,6 +22,12 @@ class _IosColorPickerState extends State<IosColorPicker> {
   void initState() {
     CacheHelper.init();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    widget.onColorSelected(colorController.value);
+    super.dispose();
   }
 
   @override
@@ -88,7 +96,9 @@ class _IosColorPickerState extends State<IosColorPicker> {
                   ],
                 ),
               ),
-              PickersSelectorRow(),
+              PickersSelectorRow(
+                onColorChanged: widget.onColorSelected,
+              ),
 
               ///ALL
               Padding(
@@ -114,9 +124,8 @@ class _IosColorPickerState extends State<IosColorPicker> {
                             return ColorPickerSlider(
                                 TrackType.alpha, HSVColor.fromColor(color),
                                 small: false, (v) {
-                              ///TODO RETURN THE COLOR
-
                               colorController.updateOpacity(v.alpha);
+                              widget.onColorSelected(colorController.value);
                             });
                           },
                         ),
@@ -209,7 +218,9 @@ class _IosColorPickerState extends State<IosColorPicker> {
                       ),
                     ],
                   ),
-                  HistoryColors()
+                  HistoryColors(
+                    onColorChanged: widget.onColorSelected,
+                  )
                 ],
               ),
             ],

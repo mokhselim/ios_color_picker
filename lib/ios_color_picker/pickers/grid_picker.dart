@@ -4,7 +4,8 @@ import '../ios_color_picker.dart';
 import '../shared.dart';
 
 class GridPicker extends StatelessWidget {
-  const GridPicker({super.key});
+  final ValueChanged<Color> onColorChanged;
+  const GridPicker({super.key, required this.onColorChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,9 @@ class GridPicker extends StatelessWidget {
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 12),
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
-            onTap: () => colorController.updateColor(colors[index]),
+            onTap: () {
+              onColorChanged(colors[index]);
+            },
             child: Container(
               padding: EdgeInsets.all(
                   colorController.value.toHex() == colors[index].toHex()
