@@ -44,24 +44,25 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Center(
             child: ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
+              onPressed: () {
+                showModalBottomSheet(
                     backgroundColor: Colors.transparent,
                     barrierColor: Colors.transparent,
                     isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return IosColorPicker(
-                          onColorSelected: (Color value) {
-                            setState(() {
-                              backgroundColor = value;
-                            });
-                          },
-                        );
-                      });
-                },
-                child: Text("SelectColor")),
-          )
+                    context: context,
+                    builder: (context) {
+                      return IosColorPicker(
+                        onColorSelected: (Color value) {
+                          setState(() {
+                            backgroundColor = value;
+                          });
+                        },
+                      );
+                    });
+              },
+              child: Text("SelectColor"),
+            ),
+          ),
         ],
       ),
     );

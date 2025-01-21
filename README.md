@@ -3,37 +3,79 @@ This README describes the package. If you publish this package to pub.dev,
 this README's contents appear on the landing page for your package.
 
 For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
 
 For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
+[creating packages](https://dart.dev/guides/libraries/create-library-packages)
 and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
+[developing packages and plugins](https://flutter.dev/developing-packages).
 -->
+## Description
+Animated collapsible sidebar for Flutter apps " macOS & Web & Windows & Linux " with very cool animation and responsive with full control to customize the colors and texts and almost everything
 
-: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# This package supports all platforms listed below.
+
+### **platforms:**
+
+* linux
+* macos
+* web
+* windows
+* iOS
+* Android
+
 
 ## Features
+<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/1.png">
+<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/2.png">
+<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/3.png">
 
-: List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
+<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/1.gif">
+<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/2.gif">
+<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/3.gif">
 
-: List prerequisites and provide or point to information on how to
-start using the package.
+
+
+
+
+[//]: # (## Getting started)
+
+
+[//]: # (start using the package.)
 
 ## Usage
 
-: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
 
-```dart
-const like = 'sample';
-```
+[//]: (to `/example` folder.)
+
+~~~~dart
+
+ElevatedButton(
+onPressed: () {
+showModalBottomSheet(
+backgroundColor: Colors.transparent,
+barrierColor: Colors.transparent,
+isScrollControlled: true,
+context: context,
+builder: (context) {
+return IosColorPicker(
+onColorSelected: (Color value) {
+setState(() {
+backgroundColor = value;
+});
+},
+);
+});
+},
+child: Text("SelectColor"),
+),
+~~~~
 
 ## Additional information
+LinkedIn
+<link as="https://www.linkedin.com/in/mo-kh-selim/">
 
-: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+
+
+# ios_color_picker
