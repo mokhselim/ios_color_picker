@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 ## Description
-Animated collapsible sidebar for Flutter apps " macOS & Web & Windows & Linux " with very cool animation and responsive with full control to customize the colors and texts and almost everything
+A new Flutter package that provides native iOS Color Picker cloned UI for all platforms
 
 # This package supports all platforms listed below.
 
@@ -26,17 +26,14 @@ Animated collapsible sidebar for Flutter apps " macOS & Web & Windows & Linux " 
 
 
 ## Features
-<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504135/color_picker/1_v2nk8m.png">
-<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504147/color_picker/2_sp5wvu.png">
-<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504137/color_picker/3_ovqzg6.png">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504135/color_picker/1_v2nk8m.png" width="400">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504147/color_picker/2_sp5wvu.png" width="400">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504137/color_picker/3_ovqzg6.png" width="400">
 
 
-<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504183/color_picker/1_p91sih.gif">
-<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504147/color_picker/2_sp5wvu.png">
-<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504212/color_picker/3_zkbdzu.gif">
-
-
-
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504183/color_picker/1_p91sih.gif" width="400">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504147/color_picker/2_sp5wvu.png" width="400">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504212/color_picker/3_zkbdzu.gif" width="400">
 
 
 [//]: # (## Getting started)
@@ -77,7 +74,7 @@ context: context,
 Please run the app in the [`example/`](https://github.com/mokhselim/ios_color_picker/tree/main/example) folder to start playing!
 
 ## Additional information
-<a href="https://www.linkedin.com/in/mo-kh-selim/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/144px-LinkedIn_icon.svg.png" /></a>
+<a href="https://www.linkedin.com/in/mo-kh-selim/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/144px-LinkedIn_icon.svg.png" width="32" /></a>
 
 
 # ios_color_picker
