@@ -26,14 +26,14 @@ Animated collapsible sidebar for Flutter apps " macOS & Web & Windows & Linux " 
 
 
 ## Features
-<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/1.png">
-<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/2.png">
-<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/3.png">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504135/color_picker/1_v2nk8m.png">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504147/color_picker/2_sp5wvu.png">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504137/color_picker/3_ovqzg6.png">
 
 
-<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/1.gif">
-<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/2.gif">
-<img src="https://github.com/mokhselim/ios_color_picker/blob/main/example/assets/3.gif">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504183/color_picker/1_p91sih.gif">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504147/color_picker/2_sp5wvu.png">
+<img src="https://res.cloudinary.com/dcvoshrrl/image/upload/v1737504212/color_picker/3_zkbdzu.gif">
 
 
 
