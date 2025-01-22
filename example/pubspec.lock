@@ -100,10 +100,10 @@ packages:
     dependency: "direct main"
     description:
       name: ios_color_picker
-      sha256: "92af71c7048f9aed640782231354de762990c1ce73d579337563ad1ebb5c1cc6"
+      sha256: db6f2429e4ffe8fd543694a9def8f3131af575c655d752f3c6c49908831a03e6
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1+6"
+    version: "1.0.0+2"
   leak_tracker:
     dependency: transitive
     description:
