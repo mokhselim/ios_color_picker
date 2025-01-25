@@ -106,8 +106,7 @@ class _HistoryColorsState extends State<HistoryColors> {
                   padding: const EdgeInsets.only(left: 27, right: 17),
                   crossAxisCount: 5,
                   mainAxisSpacing: 12,
-                  crossAxisSpacing:
-                      ((maxWidth(context) - 304) / 5),
+                  crossAxisSpacing: ((maxWidth(context) - 304) / 5),
                   dragStartBehavior: DragStartBehavior.down,
                   children: List.generate(
                       historyColors.length >= 10

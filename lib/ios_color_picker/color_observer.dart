@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 ColorController colorController = ColorController(Colors.red);
 
