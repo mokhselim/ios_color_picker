@@ -43,9 +43,7 @@ class _IosColorPickerState extends State<IosColorPicker> {
             focusColor: Colors.transparent,
             onTap: () => Navigator.pop(context),
             child: SizedBox(
-              width: MediaQuery.sizeOf(context).width > 400
-                  ? 400
-                  : MediaQuery.sizeOf(context).width,
+              width: maxWidth(context),
             ),
           ),
         ),

@@ -88,9 +88,7 @@ class _HistoryColorsState extends State<HistoryColors> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 97,
-      width: MediaQuery.sizeOf(context).width > 400
-          ? 400 - 120
-          : MediaQuery.sizeOf(context).width - 120,
+      width: maxWidth(context) - 120,
       child: Column(
         children: [
           Expanded(
@@ -109,7 +107,7 @@ class _HistoryColorsState extends State<HistoryColors> {
                   crossAxisCount: 5,
                   mainAxisSpacing: 12,
                   crossAxisSpacing:
-                      ((MediaQuery.sizeOf(context).width - 304) / 5),
+                      ((maxWidth(context) - 304) / 5),
                   dragStartBehavior: DragStartBehavior.down,
                   children: List.generate(
                       historyColors.length >= 10
