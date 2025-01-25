@@ -88,7 +88,9 @@ class _HistoryColorsState extends State<HistoryColors> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 97,
-      width: MediaQuery.sizeOf(context).width - 120,
+      width: MediaQuery.sizeOf(context).width > 400
+          ? 400 - 120
+          : MediaQuery.sizeOf(context).width - 120,
       child: Column(
         children: [
           Expanded(
