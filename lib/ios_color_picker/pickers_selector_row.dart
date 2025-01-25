@@ -79,7 +79,7 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
                         : Alignment.centerRight,
                 duration: const Duration(milliseconds: 200),
                 child: Container(
-                  width: ((400 - 32) / 3),
+                  width: ((maxWidth(context) - 32) / 3),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: selectedSliderColor,

@@ -48,7 +48,7 @@ class _IosColorPickerState extends State<IosColorPicker> {
           ),
         ),
         Container(
-          width: double.infinity,
+          width: maxWidth(context),
           height: 340 + componentsHeight(context),
           decoration: const BoxDecoration(
             color: backgroundColor,
