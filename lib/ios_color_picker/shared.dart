@@ -7,8 +7,8 @@ double componentsHeight(BuildContext context) {
 
 double maxWidth(BuildContext context) {
   double width = MediaQuery.sizeOf(context).width;
-  if (width > 400) {
-    width = 400;
+  if (width > 500) {
+    width = 500;
   }
   return width;
 }
