@@ -5,6 +5,7 @@ import 'package:ios_color_picker/ios_color_picker/history_colors.dart';
 import 'package:ios_color_picker/ios_color_picker/pickers/slider_picker/slider_helper.dart';
 import 'package:ios_color_picker/ios_color_picker/pickers_selector_row.dart';
 import 'package:ios_color_picker/ios_color_picker/shared.dart';
+import 'package:flutter/services.dart';
 
 ///Returns iOS Style color Picker
 class IosColorPicker extends StatefulWidget {
@@ -231,5 +232,16 @@ class _IosColorPickerState extends State<IosColorPicker> {
         ),
       ],
     );
+  }
+}
+
+
+
+class IosColorPickerNative {
+  static const MethodChannel _channel = MethodChannel('ios_color_picker');
+
+  static Future<Map<String, int>> pickColor() async {
+    final color = await _channel.invokeMethod<Map>('pickColor');
+    return Map<String, int>.from(color!);
   }
 }
