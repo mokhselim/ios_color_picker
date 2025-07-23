@@ -24,9 +24,6 @@ class MethodChannelIosColorPicker extends IosColorPickerPlatform {
     if (color == null) {
       return null;
     }
-    debugPrint(color.toString());
-    log(color.toString());
-    log("MOOOOOO");
     return Map<String, double>.from(color).toColor();
   }
 }

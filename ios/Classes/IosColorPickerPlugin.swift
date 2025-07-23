@@ -78,31 +78,36 @@ extension IosColorPickerPlugin: UIColorPickerViewControllerDelegate {
 }
 
 extension UIColor {
-    func toRGBA() -> [String: CGFloat]? {
-           var red: CGFloat = 0
-           var green: CGFloat = 0
-           var blue: CGFloat = 0
-           var alpha: CGFloat = 0
+  func toRGBA() -> [String: CGFloat] {
+      var red: CGFloat = 0
+      var green: CGFloat = 0
+      var blue: CGFloat = 0
+      var alpha: CGFloat = 0
 
-           // Convert CGColor to sRGB color space
-           guard let cgColor = self.cgColor.converted(
-               to: CGColorSpace(name: CGColorSpace.sRGB)!,
-               intent: .defaultIntent,
-               options: nil
-           ),
-           let convertedColor = UIColor(cgColor: cgColor)
-               .cgColor.components,
-           cgColor.numberOfComponents >= 4 else {
-               return nil
-           }
+      // Convert color to sRGB space before reading values
+      let rgbColor = self.cgColor.converted(to: CGColorSpace(name: CGColorSpace.sRGB)!, intent: .defaultIntent, options: nil)
 
-           return [
-               "red": cgColor.components?[0] ?? 0,
-               "green": cgColor.components?[1] ?? 0,
-               "blue": cgColor.components?[2] ?? 0,
-               "alpha": cgColor.alpha
-           ]
-       }
+      if let convertedColor = rgbColor {
+          let uiColor = UIColor(cgColor: convertedColor)
+          if uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+              return [
+                  "red": red,
+                  "green": green,
+                  "blue": blue,
+                  "alpha": alpha
+              ]
+          }
+      }
+
+      // Fallback in case conversion fails
+      return [
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "alpha": 1
+      ]
+  }
+
 }
 
 extension Dictionary where Key == String, Value == CGFloat {
