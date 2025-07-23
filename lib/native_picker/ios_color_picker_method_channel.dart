@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:ios_color_picker/custom_picker/extensions.dart';
@@ -23,7 +24,9 @@ class MethodChannelIosColorPicker extends IosColorPickerPlatform {
     if (color == null) {
       return null;
     }
-    debugPrint(Map<String, double>.from(color).toString());
+    debugPrint(color.toString());
+    log(color.toString());
+    log("MOOOOOO");
     return Map<String, double>.from(color).toColor();
   }
 }
