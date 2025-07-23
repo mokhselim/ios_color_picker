@@ -84,9 +84,11 @@ extension UIColor {
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
 
-        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+  guard let convertedColor = self.usingColorSpace(.sRGB),
+              convertedColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
             return nil
         }
+
         return [
             "red": red ,
             "green": green ,
