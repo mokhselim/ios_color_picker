@@ -65,11 +65,10 @@ extension ColorExtensions on Color {
 extension MapToColorExtension on Map<Object?, Object?> {
   /// Converts a `Map<String, double>` to a [Color].
   Color toColor() {
-    return Color.from(
-      red: this["red"] as double? ?? 0.0,
-      green: this["green"] as double? ?? 0.0,
-      blue: this["blue"] as double? ?? 0.0,
-      alpha: this["alpha"] as double? ?? 0.0,
-    );
+    final red = ((this['red'] ?? 0) as num).round().clamp(0, 255);
+    final green = ((this['green'] ?? 0) as num).round().clamp(0, 255);
+    final blue = ((this['blue'] ?? 0) as num).round().clamp(0, 255);
+    final alpha = ((this['alpha'] ?? 255) as num).round().clamp(0, 255);
+    return Color.fromARGB(alpha, red, green, blue);
   }
 }

@@ -87,11 +87,12 @@ extension UIColor {
         guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
             return nil
         }
+
         return [
-            "red": red ,
-            "green": green ,
-            "blue": blue ,
-            "alpha": alpha
+            "red": red * 255,
+            "green": green * 255,
+            "blue": blue * 255,
+            "alpha": alpha * 255
         ]
     }
 }
