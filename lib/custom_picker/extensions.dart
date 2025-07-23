@@ -65,11 +65,10 @@ extension ColorExtensions on Color {
 extension MapToColorExtension on Map<Object?, Object?> {
   /// Converts a `Map<String, double>` to a [Color].
   Color toColor() {
-    // Values are already in 0–255 from iOS, so no need to multiply
-    final red = (this['red'] as num?)?.round() ?? 0;
-    final green = (this['green'] as num?)?.round() ?? 0;
-    final blue = (this['blue'] as num?)?.round() ?? 0;
-    final alpha = (this['alpha'] as num?)?.round() ?? 255;
+    final red = (((this['red'] ?? 0.0) as double) * 255).round();
+    final green = (((this['green'] ?? 0.0) as double) * 255).round();
+    final blue = (((this['blue'] ?? 0.0) as double) * 255).round();
+    final alpha = (((this['alpha'] ?? 0.0) as double) * 255).round();
 
     return Color.fromARGB(alpha, red, green, blue);
   }
