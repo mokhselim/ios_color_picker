@@ -45,20 +45,22 @@ class _MyHomePageState extends State<MyHomePage> {
           Center(
             child: ElevatedButton(
               onPressed: () {
-                showModalBottomSheet(
-                    backgroundColor: Colors.transparent,
-                    barrierColor: Colors.transparent,
-                    isScrollControlled: true,
-                    context: context,
-                    builder: (context) {
-                      return IosColorPicker(
-                        onColorSelected: (Color value) {
-                          setState(() {
-                            backgroundColor = value;
-                          });
-                        },
-                      );
-                    });
+                IosColorPickerNative.pickColor();
+                // showModalBottomSheet(
+                //     backgroundColor: Colors.transparent,
+                //     barrierColor: Colors.transparent,
+                //     isScrollControlled: true,
+                //     context: context,
+                //     builder: (context) {
+                //
+                //       return IosColorPicker(
+                //         onColorSelected: (Color value) {
+                //           setState(() {
+                //             backgroundColor = value;
+                //           });
+                //         },
+                //       );
+                //     });
               },
               child: Text("SelectColor"),
             ),

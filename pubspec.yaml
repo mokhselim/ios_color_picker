@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   shared_preferences: ^2.3.5
   smooth_page_indicator: ^1.2.0+3
   super_tooltip: ^2.0.9
