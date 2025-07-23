@@ -79,23 +79,30 @@ extension IosColorPickerPlugin: UIColorPickerViewControllerDelegate {
 
 extension UIColor {
     func toRGBA() -> [String: CGFloat]? {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
+           var red: CGFloat = 0
+           var green: CGFloat = 0
+           var blue: CGFloat = 0
+           var alpha: CGFloat = 0
 
-  guard let convertedColor = self.usingColorSpace(.sRGB),
-              convertedColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
-            return nil
-        }
+           // Convert CGColor to sRGB color space
+           guard let cgColor = self.cgColor.converted(
+               to: CGColorSpace(name: CGColorSpace.sRGB)!,
+               intent: .defaultIntent,
+               options: nil
+           ),
+           let convertedColor = UIColor(cgColor: cgColor)
+               .cgColor.components,
+           cgColor.numberOfComponents >= 4 else {
+               return nil
+           }
 
-        return [
-            "red": red ,
-            "green": green ,
-            "blue": blue ,
-            "alpha": alpha
-        ]
-    }
+           return [
+               "red": cgColor.components?[0] ?? 0,
+               "green": cgColor.components?[1] ?? 0,
+               "blue": cgColor.components?[2] ?? 0,
+               "alpha": cgColor.alpha
+           ]
+       }
 }
 
 extension Dictionary where Key == String, Value == CGFloat {
