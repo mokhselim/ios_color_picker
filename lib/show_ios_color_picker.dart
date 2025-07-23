@@ -33,9 +33,6 @@ class IOSColorPickerController {
     IosColorPickerPlatform.instance
         .getPlatformColor(selectedColor.toMap(), darkMode);
     _colorSubscription = _eventChannel.receiveBroadcastStream().listen((event) {
-      debugPrint(event.toString());
-      log(event.toString());
-      debugPrint("MOOOOOO");
       if (event != null) {
         try {
           selectedColor = (event as Map<Object?, Object?>).toColor();
