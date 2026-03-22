@@ -1,5 +1,5 @@
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide TooltipPositionDelegate;
 import 'package:ios_color_picker/custom_picker/shared.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:super_tooltip/super_tooltip.dart';
@@ -52,8 +52,10 @@ class _HistoryColorsState extends State<HistoryColors> {
     }
     if (empty) {
       historyColors.toStringList().forEach((v) {});
-      CacheHelper()
-          .setData(key: "history_colors", value: historyColors.toStringList());
+      CacheHelper().setData(
+        key: "history_colors",
+        value: historyColors.toStringList(),
+      );
       if (page > 1 && colorPage != page && !delete) {
         pageController.jumpToPage(page);
         colorPage = page;
@@ -109,131 +111,135 @@ class _HistoryColorsState extends State<HistoryColors> {
                   crossAxisSpacing: ((maxWidth(context) - 304) / 5),
                   dragStartBehavior: DragStartBehavior.down,
                   children: List.generate(
-                      historyColors.length >= 10
-                          ? (historyColors.length - (pageIndex * 10)) + 1
-                          : historyColors.length + 1, (index) {
-                    if (index + (pageIndex * 10) == historyColors.length) {
-                      return InkWell(
-                        onTap: () {
-                          historyColors.add(colorController.value);
-                          setHistory();
-                        },
-                        child: ConstrainedBox(
-                          constraints: const BoxConstraints(
+                    historyColors.length >= 10
+                        ? (historyColors.length - (pageIndex * 10)) + 1
+                        : historyColors.length + 1,
+                    (index) {
+                      if (index + (pageIndex * 10) == historyColors.length) {
+                        return InkWell(
+                          onTap: () {
+                            historyColors.add(colorController.value);
+                            setHistory();
+                          },
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
                               minHeight: 30,
                               minWidth: 30,
                               maxWidth: 30,
-                              maxHeight: 30),
-                          child: Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white.withValues(alpha: 0.16),
+                              maxHeight: 30,
                             ),
-                            child: const Icon(
-                              Icons.add,
-                              color: Color(0xffB0B0BD),
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white.withValues(alpha: 0.16),
+                              ),
+                              child: const Icon(
+                                Icons.add,
+                                color: Color(0xffB0B0BD),
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    }
-                    return SuperTooltip(
-                      onHide: () {
-                        toolTip = -1;
-                      },
-                      onLongPress: () {
-                        setState(() {
-                          toolTip = (index + (pageIndex * 10));
-                        });
-                        showTooltip();
-                      },
-                      showBarrier: false,
-                      // showDropBoxFilter: true,
-                      hasShadow: false,
-                      sigmaY: 16,
-                      sigmaX: 16,
-                      arrowLength: 8,
-                      arrowTipDistance: 17,
-                      bubbleDimensions: EdgeInsets.zero,
-                      popupDirection: TooltipDirection.up,
-                      controller: toolTip == (index + (pageIndex * 10))
-                          ? _tipController
-                          : null,
-                      content: InkWell(
-                        onTap: () {
-                          historyColors.removeAt((index + (pageIndex * 10)));
-                          setHistory(delete: true);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 12),
-                          child: Text(
-                            "Delete",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium
-                                ?.copyWith(color: Colors.red),
-                          ),
-                        ),
-                      ),
-                      child: InkWell(
-                        onTap: () {
-                          colorController.updateColor(
-                              historyColors[(index + (pageIndex * 10))]);
-                          widget.onColorChanged(colorController.value);
-                          _tipController.hideTooltip();
+                        );
+                      }
+                      return SuperTooltip(
+                        onHide: () {
                           toolTip = -1;
-                          setState(() {});
                         },
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            ConstrainedBox(
-                              constraints: const BoxConstraints(
+                        onLongPress: () {
+                          setState(() {
+                            toolTip = (index + (pageIndex * 10));
+                          });
+                          showTooltip();
+                        },
+                        showBarrier: false,
+                        // showDropBoxFilter: true,
+                        hasShadow: false,
+                        sigmaY: 16,
+                        sigmaX: 16,
+                        arrowLength: 8,
+                        arrowTipDistance: 17,
+                        bubbleDimensions: EdgeInsets.zero,
+                        popupDirection: TooltipDirection.up,
+                        controller: toolTip == (index + (pageIndex * 10))
+                            ? _tipController
+                            : null,
+                        content: InkWell(
+                          onTap: () {
+                            historyColors.removeAt((index + (pageIndex * 10)));
+                            setHistory(delete: true);
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 8,
+                              horizontal: 12,
+                            ),
+                            child: Text(
+                              "Delete",
+                              style: Theme.of(context).textTheme.bodyMedium
+                                  ?.copyWith(color: Colors.red),
+                            ),
+                          ),
+                        ),
+                        child: InkWell(
+                          onTap: () {
+                            colorController.updateColor(
+                              historyColors[(index + (pageIndex * 10))],
+                            );
+                            widget.onColorChanged(colorController.value);
+                            _tipController.hideTooltip();
+                            toolTip = -1;
+                            setState(() {});
+                          },
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              ConstrainedBox(
+                                constraints: const BoxConstraints(
                                   minHeight: 30,
                                   minWidth: 30,
                                   maxWidth: 30,
-                                  maxHeight: 30),
-                              child: Container(
-                                height: 30,
-                                width: 30,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color:
-                                      historyColors[(index + (pageIndex * 10))],
+                                  maxHeight: 30,
                                 ),
-                              ),
-                            ),
-                            if (colorController.value.toHex() ==
-                                historyColors[(index + (pageIndex * 10))]
-                                    .toHex())
-                              Container(
-                                height: 24,
-                                width: 24,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2,
+                                child: Container(
+                                  height: 30,
+                                  width: 30,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color:
+                                        historyColors[(index +
+                                            (pageIndex * 10))],
                                   ),
                                 ),
                               ),
-                          ],
+                              if (colorController.value.toHex() ==
+                                  historyColors[(index + (pageIndex * 10))]
+                                      .toHex())
+                                Container(
+                                  height: 24,
+                                  width: 24,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Colors.white,
+                                      width: 2,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  }),
+                      );
+                    },
+                  ),
                 );
               }),
             ),
           ),
           if (page > 1)
             Padding(
-              padding: const EdgeInsets.only(
-                top: 10.0,
-              ),
+              padding: const EdgeInsets.only(top: 10.0),
               child: AnimatedSmoothIndicator(
                 activeIndex: colorPage,
                 count: page,
@@ -247,7 +253,7 @@ class _HistoryColorsState extends State<HistoryColors> {
                   activeDotColor: Colors.white,
                 ),
               ),
-            )
+            ),
         ],
       ),
     );
