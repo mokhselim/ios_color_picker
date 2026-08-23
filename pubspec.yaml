@@ -1,6 +1,6 @@
 name: ios_color_picker
 description: "A Flutter package that provides an iOS-style color picker UI for every Flutter platform, plus the native iOS color picker on iOS."
-version: 3.0.0
+version: 3.0.1
 homepage: https://github.com/mokhselim/ios_color_picker
 
 environment:
@@ -55,7 +55,7 @@ flutter:
         pluginClass: IosColorPickerPluginCApi
       web:
         pluginClass: IosColorPickerWeb
-        fileName: ios_color_picker_web.dart
+        fileName: native_picker/ios_color_picker_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

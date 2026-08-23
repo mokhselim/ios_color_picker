@@ -1,3 +1,7 @@
+## 3.0.1
+
+* Fix web builds: point the `web` plugin declaration at `native_picker/ios_color_picker_web.dart`, the path the file has had since 3.0.0.
+
 ## 3.0.0
 
 * Update the package for Flutter 3.41 / Dart 3.11.
