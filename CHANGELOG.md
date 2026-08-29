@@ -1,3 +1,7 @@
+## Unreleased
+
+* Add Swift Package Manager support for iOS and macOS. Sources moved to `ios/ios_color_picker/Sources/ios_color_picker/` and `macos/ios_color_picker/Sources/ios_color_picker/`; the podspecs are repointed so CocoaPods keeps working.
+
 ## 3.0.0
 
 * Update the package for Flutter 3.41 / Dart 3.11.

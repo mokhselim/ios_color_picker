@@ -13,7 +13,7 @@ Provides an iOS-style color picker UI for Flutter, with access to the native iOS
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Mohamed Khaled Selim' => 'https://github.com/mokhselim' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'ios_color_picker/Sources/ios_color_picker/**/*.swift'
   s.dependency 'Flutter'
   s.platform = :ios, '14.0'
 
@@ -25,5 +25,5 @@ Provides an iOS-style color picker UI for Flutter, with access to the native iOS
   # required reason APIs, update the PrivacyInfo.xcprivacy file to describe your
   # plugin's privacy impact, and then uncomment this line. For more information,
   # see https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
-  s.resource_bundles = {'ios_color_picker_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
+  s.resource_bundles = {'ios_color_picker_privacy' => ['ios_color_picker/Sources/ios_color_picker/Resources/PrivacyInfo.xcprivacy']}
 end
