@@ -1,3 +1,7 @@
+## Unreleased
+
+* Update `smooth_page_indicator` to 3.0.0. The picker sets `dotColor` and `activeDotColor` explicitly, so the release's theme-derived default colours do not change its appearance.
+
 ## 3.0.0
 
 * Update the package for Flutter 3.41 / Dart 3.11.
