@@ -1,3 +1,7 @@
+## Unreleased
+
+* Fix `Unsupported operation: Cannot add to an unmodifiable list` when adding a colour to the history on a fresh install: the default palette is a `const` list and was assigned to the mutable history field by reference.
+
 ## 3.0.0
 
 * Update the package for Flutter 3.41 / Dart 3.11.
