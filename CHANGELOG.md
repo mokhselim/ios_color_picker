@@ -1,3 +1,7 @@
+## Unreleased
+
+* Fix the custom picker overflowing the bottom of the screen in landscape on small devices: the sheet is now clamped to the available height and its content scrolls.
+
 ## 3.0.0
 
 * Update the package for Flutter 3.41 / Dart 3.11.
